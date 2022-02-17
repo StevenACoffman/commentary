@@ -2,7 +2,9 @@ package github
 
 import (
 	"context"
+
 	"github.com/Khan/genqlient/graphql"
+
 	"github.com/StevenACoffman/commentary/pkg/generated/genqlient"
 	"github.com/StevenACoffman/commentary/pkg/types"
 )

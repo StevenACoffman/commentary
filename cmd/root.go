@@ -4,17 +4,19 @@ import (
 	"context"
 	_ "embed"
 	"fmt"
-	"github.com/Khan/genqlient/graphql"
-	"github.com/StevenACoffman/commentary/pkg/github"
-	"github.com/StevenACoffman/commentary/pkg/middleware"
-	"github.com/StevenACoffman/commentary/pkg/types"
-	homedir "github.com/mitchellh/go-homedir"
-	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
 	"log"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/Khan/genqlient/graphql"
+	homedir "github.com/mitchellh/go-homedir"
+	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+
+	"github.com/StevenACoffman/commentary/pkg/github"
+	"github.com/StevenACoffman/commentary/pkg/middleware"
+	"github.com/StevenACoffman/commentary/pkg/types"
 )
 
 var cfgFile string
@@ -102,14 +104,12 @@ var rootCmd = &cobra.Command{
 			logger.Printf("Got error: %v", err)
 			os.Exit(1)
 		}
-
 	},
 }
 
-// 	Populated during build
 var (
 	MarkFmt          = `<!-- {"write":"github-pr-comment-api", "v":1, "id":"%s"} -->`
-	MarkActionTypeID = "default"
+	MarkActionTypeID = getEnv("COMMENTARY_ACTION_TYPE", "default")
 	Marker           = fmt.Sprintf(MarkFmt, MarkActionTypeID)
 )
 
@@ -120,6 +120,13 @@ func filterComments(comments []types.CommentNodes) string {
 		}
 	}
 	return ""
+}
+
+func getEnv(key, fallback string) string {
+	if value, ok := os.LookupEnv(key); ok {
+		return value
+	}
+	return fallback
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

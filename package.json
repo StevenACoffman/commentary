@@ -1,0 +1,32 @@
+{
+  "name": "commentary",
+  "version": "1.0.0",
+  "description": "This is a small demo that will either create a new comment or update an existing comment on a pull request in GitHub.",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node postinstall.js install",
+    "preuninstall": "node postinstall.js uninstall"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenACoffman/commentary.git"
+  },
+  "keywords": [],
+  "author": "Steven A Coffman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StevenACoffman/commentary/issues"
+  },
+  "goBinary": {
+    "name": "example",
+    "path": "./bin"
+  },
+  "homepage": "https://github.com/StevenACoffman/commentary#readme",
+  "files": [
+    "dist",
+    "postinstall.js"
+  ],
+  "dependencies": {
+    "mkdirp": "^1.0.4"
+  }
+}

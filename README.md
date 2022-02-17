@@ -21,5 +21,6 @@ If you do `brew install mage` then you can run here:
 + `mage -v run` - will run the webserver by doing `go run main.go`
 + `mage generate` - will re-generate the genqlient code by doing `go generate ./...`
 + `mage install` - will build and install the commentary application binary
++ `mage release` - will generate a new release
 
 Or just run the go commands by hand.

@@ -11,7 +11,8 @@ import (
 	"path/filepath"
 	"regexp"
 
-	"github.com/magefile/mage/mg" // mg contains helpful utility functions, like Deps
+	// mg contains helpful utility functions, like Deps
+	"github.com/magefile/mage/mg"
 	"github.com/magefile/mage/sh"
 )
 

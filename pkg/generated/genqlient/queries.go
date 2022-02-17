@@ -8,6 +8,7 @@ import (
 	"fmt"
 
 	"github.com/Khan/genqlient/graphql"
+
 	"github.com/StevenACoffman/commentary/pkg/types"
 )
 
@@ -273,7 +274,6 @@ func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnect
 }
 
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) UnmarshalJSON(b []byte) error {
-
 	if string(b) == "null" {
 		return nil
 	}
@@ -368,12 +368,16 @@ type GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionN
 
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
+
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
+
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
+
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
+
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
 
@@ -416,7 +420,6 @@ func __unmarshalGetCommentsForPullRequestResourcePullRequestCommentsIssueComment
 }
 
 func __marshalGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor) ([]byte, error) {
-
 	var typename string
 	switch v := (*v).(type) {
 	case *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot:
@@ -711,46 +714,67 @@ type GetCommentsForPullRequestResourceUniformResourceLocatable interface {
 
 func (v *GetCommentsForPullRequestResourceBot) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceCheckRun) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceClosedEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceCommit) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceConvertToDraftEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceCrossReferencedEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceGist) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceIssue) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceMannequin) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceMergedEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceMilestone) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceOrganization) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourcePullRequest) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourcePullRequestCommit) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceReadyForReviewEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceRelease) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceRepository) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceRepositoryTopic) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceReviewDismissedEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceTeamDiscussion) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceTeamDiscussionComment) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
+
 func (v *GetCommentsForPullRequestResourceUser) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
 
@@ -844,7 +868,6 @@ func __unmarshalGetCommentsForPullRequestResourceUniformResourceLocatable(b []by
 }
 
 func __marshalGetCommentsForPullRequestResourceUniformResourceLocatable(v *GetCommentsForPullRequestResourceUniformResourceLocatable) ([]byte, error) {
-
 	var typename string
 	switch v := (*v).(type) {
 	case *GetCommentsForPullRequestResourceBot:
@@ -1054,7 +1077,6 @@ func (v *GetCommentsForPullRequestResponse) GetResource() GetCommentsForPullRequ
 }
 
 func (v *GetCommentsForPullRequestResponse) UnmarshalJSON(b []byte) error {
-
 	if string(b) == "null" {
 		return nil
 	}
