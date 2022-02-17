@@ -1,0 +1,33 @@
+# Config file for genqlient, our code-generator for GraphQL queries.
+#
+# See https://github.com/Khan/genqlient for more about genqlient.
+
+# See `go doc github.com/Khan/genqlient/generate.Config` for documentation.
+
+# Services can and typically do make queries against the global federated
+# schema, not just their own schema!
+package: genqlient
+schema: schema.graphql
+# The files from which we pull operations (relative to genqlient.yaml).
+operations:
+- genqlient.graphql
+# Generated code goes here (relative to genqlient.yaml ).
+generated: generated/genqlient/queries.go
+
+# We bind github's DateTime scalar type to Go's time.Time (which conveniently
+# already defines MarshalJSON and UnmarshalJSON).  This means genqlient will
+# use time.Time when a query requests a DateTime, and is required for custom
+# scalars.
+bindings:
+  Date:
+    type: cloud.google.com/go/civil.Date
+  DateTime:
+    type: time.Time
+  URI:
+    type: string
+  GitObject:
+    type: github.com/StevenACoffman/commentary/pkg/types.GitObject
+#  GitObject:
+#    type: encoding/json.RawMessage
+#  Resource:
+#    type: github.com/StevenACoffman/commentary/pkg/types.Resource
