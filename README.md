@@ -1,6 +1,6 @@
 ### Commentary - Update a github comment
 
-This is a small demo that will either create a new or update an existing comment
+This is a small demo that will either create a new comment or update an existing comment
 on a pull request in GitHub.
 
 I got the idea from [Ben Limmer](https://benlimmer.com/2021/12/20/create-or-update-pr-comment/), but I did it in Go.
@@ -47,10 +47,10 @@ that will do it for you (er... me?) until I Go-ify it into the magefile.
 This uses the excellent [`google/ko`](https://github.com/google/ko) to make a fairly small 10 MB image [over here](https://hub.docker.com/repository/docker/stevenacoffman/commentary)
 
 ### YOLO Run from release binary
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
+I don't know how to execute it in a one liner, but I imagine there's a trick to do it
+```
+wget -c https://github.com/StevenACoffman/commentary/releases/download/v0.6.0/commentary_0.6.0_linux_amd64.tar.gz | tar -xz
+```
 ### Mage
 
 Instead of `make` and `Makefile`, I used [mage](https://magefile.org/) and made a [magefile](https://github.com/StevenACoffman/teamboard/blob/main/magefile.go).
