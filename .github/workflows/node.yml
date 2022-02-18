@@ -1,18 +1,23 @@
-name: DockerCommenter
+name: NodeCommenter
 on:
   pull_request:
     branches:
     - main
 env:
   GITHUB_TOKEN: "${{ secrets.PERSONAL_TOKEN }}"
-  COMMENTARY_ACTION_TYPE: "docker action"
+  COMMENTARY_ACTION_TYPE: "node action"
 jobs:
-  docker_commenter:
+  node_commenter:
 #    runs-on: [self-hosted, linux, x64]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+    - name: Install Commentary via npm
+      run: npm install -g commentary-cli
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Commentary
-      uses: docker://docker.io/stevenacoffman/commentary:v0.4.0
+      run: |-
+        which commentary
+        echo "starting commentary binary"
+        commentary
