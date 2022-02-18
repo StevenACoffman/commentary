@@ -57,9 +57,7 @@ var rootCmd = &cobra.Command{
 			err = fmt.Errorf("must set GITHUB_REPOSITORY=<git repository and owner>")
 			return
 		}
-
-		a := strings.Split(ownerAndRepo, "/")
-		repo := a[len(a)-1]
+		repo := AfterLastSlash(ownerAndRepo)
 		fmt.Printf(`GITHUB_SHA:%s
 GITHUB_REPOSITORY_OWNER:%s
 GITHUB_REPOSITORY:%s
@@ -76,10 +74,20 @@ repo:%s
 		logger.Printf("main : Started")
 
 		ctx := context.Background()
+		for _, e := range os.Environ() {
+			pair := strings.SplitN(e, "=", 2)
+			if strings.Contains(pair[0], "REF") {
+				fmt.Println(e)
+			} else {
+				fmt.Println(pair[0])
+			}
+		}
+
 		pr, comments, err := github.GetPullRequestAndCommentsForCommit(ctx, graphqlClient, sha, repo, owner)
 		if err != nil {
 			fmt.Println("ERROR", err)
 		}
+		fmt.Println("Found ", len(comments), " comments on this PR")
 		commentID := filterComments(comments)
 		fmt.Println("Got PR#", pr.Number)
 		prURL := fmt.Sprintf("https://github.com/%s/pull/%d", ownerAndRepo, pr.Number)
@@ -111,6 +119,15 @@ repo:%s
 			os.Exit(1)
 		}
 	},
+}
+
+func AfterLastSlash(path string) (file string) {
+	slash := "/"
+	li := strings.LastIndex(path, slash)
+	if li == -1 {
+		return path
+	}
+	return path[li+1:]
 }
 
 var (
