@@ -1,0 +1,19 @@
+builds:
+  - id: "my-build"
+    env:
+    - GOPRIVATE=github.com/StevenACoffman
+    - CGO_ENABLED=0
+    - GOOS=linux
+    - GOARCH=amd64
+    ldflags:
+    - -s
+    - -w
+    - -extldflags "-static"
+#  export GO111MODULE=on
+#  export COMMIT_SHA=$(git rev-parse HEAD)
+#  export export BUILD_DATE=$(date +'%s')
+#  export KO_DOCKER_REPO="docker.io/stevenacoffman/commentary"
+#  export LATEST_TAG=$(git tag -l --sort=-version:refname v* | head -1)
+#  ko publish --bare -t latest -t "$COMMIT_SHA" -t "$LATEST_TAG" .
+# PLATFORM="linux/amd64,linux/arm64,linux/386,linux/arm"
+
