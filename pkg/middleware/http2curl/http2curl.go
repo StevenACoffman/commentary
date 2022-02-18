@@ -86,9 +86,18 @@ func appendHeader(req *http.Request, k string) string {
 // insensitively
 func insensitiveContains(s []string, e string) bool {
 	for _, a := range s {
-		if strings.EqualFold(a, e) {
+		if containsI(a, e) {
 			return true
 		}
 	}
 	return false
+}
+
+// containsI checks if a string contains another,
+// case insensitively
+func containsI(a string, b string) bool {
+	return strings.Contains(
+		strings.ToLower(a),
+		strings.ToLower(b),
+	)
 }

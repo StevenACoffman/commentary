@@ -29,7 +29,7 @@ func NewLoggingRoundTripper(
 	}
 }
 
-func (rt *LoggingRoundTripper) RoundTrip(
+func (lrt *LoggingRoundTripper) RoundTrip(
 	req *http.Request,
 ) (resp *http.Response, err error) {
 	defer func(begin time.Time) {
@@ -40,8 +40,8 @@ func (rt *LoggingRoundTripper) RoundTrip(
 		}
 		gotHTTPErr := resp != nil && (resp.StatusCode < 200 || resp.StatusCode >= 300)
 		graphqlErr := GetGraphQLErrors(resp)
+		// only log when there was a problem, so early return here when happy
 		if !gotHTTPErr && graphqlErr == nil {
-			// only log when there was a problem
 			return
 		}
 		msg = fmt.Sprintf(
@@ -53,9 +53,9 @@ func (rt *LoggingRoundTripper) RoundTrip(
 			time.Since(begin),
 		)
 		if err != nil {
-			fmt.Fprintf(rt.logger, "%s : %+v\n", msg, err)
+			fmt.Fprintf(lrt.logger, "%s : %+v\n", msg, err)
 		} else {
-			fmt.Fprintf(rt.logger, "%s\n", msg)
+			fmt.Fprintf(lrt.logger, "%s\n", msg)
 		}
 		command, _ := http2curl.GetCurlCommand(req)
 		fmt.Println(command)
@@ -66,7 +66,7 @@ func (rt *LoggingRoundTripper) RoundTrip(
 		}
 	}(time.Now())
 
-	return rt.next.RoundTrip(req)
+	return lrt.next.RoundTrip(req)
 }
 
 // GetResponseBody will read the response body without clobbering it

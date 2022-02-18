@@ -87,12 +87,13 @@ func NewBearerAuthHTTPClient(token string) *http.Client {
 	header := make(http.Header)
 	header.Set("Content-Type", "application/json; charset=utf-8")
 	header.Set("Accept", "application/json; charset=utf-8")
-	rt := NewLoggingRoundTripper(http.DefaultTransport, os.Stdout)
-	hrt := NewHeaderRoundTripper(rt, header)
+
+	hrt := NewHeaderRoundTripper(http.DefaultTransport, header)
 	hrt.BearerAuth(token)
+	lrt := NewLoggingRoundTripper(hrt, os.Stdout)
 
 	return &http.Client{
-		Transport: hrt,
+		Transport: lrt,
 		Timeout:   60 * time.Second,
 	}
 }

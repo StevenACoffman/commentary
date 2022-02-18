@@ -76,13 +76,14 @@ var rootCmd = &cobra.Command{
 			fmt.Println("ERROR", err)
 		}
 		commentID := filterComments(comments)
-		fmt.Println("Got PR#", pr)
-		prURL := fmt.Sprintf("https://github.com/%s/pull/%d", ownerAndRepo, pr)
+		fmt.Println("Got PR#", pr.Number)
+		prURL := fmt.Sprintf("https://github.com/%s/pull/%d", ownerAndRepo, pr.Number)
 
 		fmt.Println(prURL)
 
 		now := time.Now().Format(time.RFC1123)
-		newMessage := fmt.Sprintf("%s\nThe current date is %s. This comment will be updated.", Marker, now)
+		newMessage := fmt.Sprintf("%s\nThe current date is %s. This comment will be updated by %s.",
+			Marker, now, MarkActionTypeID)
 		if commentID != "" {
 			id, err := github.UpdateComment(ctx, graphqlClient, commentID, newMessage)
 			if err != nil {
