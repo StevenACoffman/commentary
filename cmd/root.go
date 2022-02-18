@@ -57,9 +57,14 @@ var rootCmd = &cobra.Command{
 			err = fmt.Errorf("must set GITHUB_REPOSITORY=<git repository and owner>")
 			return
 		}
+
 		a := strings.Split(ownerAndRepo, "/")
 		repo := a[len(a)-1]
-		fmt.Println(repo)
+		fmt.Printf(`GITHUB_SHA:%s
+GITHUB_REPOSITORY_OWNER:%s
+GITHUB_REPOSITORY:%s
+repo:%s
+`, sha, owner, ownerAndRepo, repo)
 		httpClient := middleware.NewBearerAuthHTTPClient(key)
 
 		graphqlClient := graphql.NewClient("https://api.github.com/graphql", httpClient)
