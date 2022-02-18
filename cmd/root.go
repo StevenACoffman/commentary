@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 
@@ -57,9 +58,31 @@ var rootCmd = &cobra.Command{
 			err = fmt.Errorf("must set GITHUB_REPOSITORY=<git repository and owner>")
 			return
 		}
-		a := strings.Split(ownerAndRepo, "/")
-		repo := a[len(a)-1]
-		fmt.Println(repo)
+
+		baseRef := os.Getenv("GITHUB_BASE_REF")
+		if baseRef == "" {
+			err = fmt.Errorf("must set GITHUB_BASE_REF=<main or whatever>")
+			return
+		}
+		headRef := os.Getenv("GITHUB_HEAD_REF")
+		if headRef == "" {
+			err = fmt.Errorf("must set GITHUB_BASE_REF=<develop or whatever>")
+			return
+		}
+		githubRefName := os.Getenv("GITHUB_REF_NAME")
+		if githubRefName == "" {
+			err = fmt.Errorf("must set GITHUB_REF_NAME=<1/merge>")
+			return
+		}
+		prNum, err := strconv.Atoi(BeforeLastSlash(githubRefName))
+		fmt.Println("unable to parse integer out of", githubRefName)
+
+		repo := AfterLastSlash(ownerAndRepo)
+		fmt.Printf(`GITHUB_SHA:%s
+GITHUB_REPOSITORY_OWNER:%s
+GITHUB_REPOSITORY:%s
+repo:%s
+`, sha, owner, ownerAndRepo, repo)
 		httpClient := middleware.NewBearerAuthHTTPClient(key)
 
 		graphqlClient := graphql.NewClient("https://api.github.com/graphql", httpClient)
@@ -71,13 +94,28 @@ var rootCmd = &cobra.Command{
 		logger.Printf("main : Started")
 
 		ctx := context.Background()
-		pr, comments, err := github.GetPullRequestAndCommentsForCommit(ctx, graphqlClient, sha, repo, owner)
+		for _, e := range os.Environ() {
+			pair := strings.SplitN(e, "=", 2)
+			if strings.Contains(pair[0], "REF") {
+				fmt.Println(e)
+			}
+		}
+
+		//pr, comments, err := github.GetPullRequestAndCommentsForCommit(ctx, graphqlClient, sha, repo, owner)
+		pr, comments, err := github.GetPullRequestByBranch(ctx, graphqlClient, owner, repo, headRef, baseRef)
 		if err != nil {
 			fmt.Println("ERROR", err)
 		}
+
+		fmt.Println("Found ", len(comments), " comments on this PR")
 		commentID := filterComments(comments)
-		fmt.Println("Got PR#", pr.Number)
-		prURL := fmt.Sprintf("https://github.com/%s/pull/%d", ownerAndRepo, pr.Number)
+		if pr.Number != 0 {
+			//github.GetPullRequestByURI(ctx, graphqlClient, "https://github.com/StevenACoffman/commentary/pull/1")
+			//pr, comments, err = github.GetPullRequestByBranch(ctx, graphqlClient, owner, repo, headRef, baseRef)
+			prNum = pr.Number
+		}
+		fmt.Println("Got PR#", prNum)
+		prURL := fmt.Sprintf("https://github.com/%s/pull/%d", ownerAndRepo, prNum)
 
 		fmt.Println(prURL)
 
@@ -88,14 +126,19 @@ var rootCmd = &cobra.Command{
 			id, err := github.UpdateComment(ctx, graphqlClient, commentID, newMessage)
 			if err != nil {
 				fmt.Println("ERROR", err)
+				os.Exit(1)
 			}
 			fmt.Println(id)
-		} else {
+		} else if pr.ID != "" {
 			id, err := github.CreateNewPullRequestComment(ctx, graphqlClient, pr.ID, newMessage)
 			if err != nil {
 				fmt.Println("ERROR", err)
+				os.Exit(1)
 			}
 			fmt.Println(id)
+		} else {
+			fmt.Println("Could not find the Pull Request")
+			os.Exit(1)
 		}
 
 		if err == nil {
@@ -106,6 +149,24 @@ var rootCmd = &cobra.Command{
 			os.Exit(1)
 		}
 	},
+}
+
+func AfterLastSlash(path string) (file string) {
+	slash := "/"
+	li := strings.LastIndex(path, slash)
+	if li == -1 {
+		return path
+	}
+	return path[li+1:]
+}
+
+func BeforeLastSlash(path string) (file string) {
+	slash := "/"
+	li := strings.LastIndex(path, slash)
+	if li == -1 {
+		return path
+	}
+	return path[:li]
 }
 
 var (

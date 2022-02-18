@@ -11,10 +11,11 @@ type Author struct {
 }
 
 type CommentNodes struct {
-	ID     string `json:"id"`
-	URL    string `json:"url"`
-	Author Author `json:"author"`
-	Body   string `json:"body"`
+	Typename string `json:"__typename"`
+	ID       string `json:"id"`
+	URL      string `json:"url"`
+	Author   Author `json:"author"`
+	Body     string `json:"body"`
 }
 
 type PageInfo struct {
@@ -22,21 +23,20 @@ type PageInfo struct {
 }
 
 type Comments struct {
+	Typename string         `json:"__typename"`
 	Nodes    []CommentNodes `json:"nodes"`
 	PageInfo PageInfo       `json:"pageInfo"`
 }
 
-type PRNodes struct {
-	Number   int      `json:"number"`
-	ID       string   `json:"id"`
-	Comments Comments `json:"comments"`
+type PullRequest struct {
+	Typename     string   `json:"__typename"`
+	Number       int      `json:"number"`
+	ID           string   `json:"id"`
+	Comments     Comments `json:"comments"`
+	ResourcePath string   `json:"resourcePath"`
+	URL          string   `json:"url"`
 }
 
 type AssociatedPullRequests struct {
-	PRNodes []PRNodes `json:"nodes"`
-}
-
-type PullRequest struct {
-	Number int    `json:"number"`
-	ID     string `json:"id"`
+	PRNodes []PullRequest `json:"nodes"`
 }

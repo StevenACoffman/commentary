@@ -1,11 +1,80 @@
-query GetPullRequestForCommit($owner: String!, $repo: String!, $sha: String ) {
+query GetPullRequestForCommit($owner: String!, $repo: String!, $sha: String) {
   repository(name: $repo, owner: $owner) {
     commit: object(expression: $sha) {
       ... on Commit {
-        associatedPullRequests(first:1) {
-            nodes {
+        associatedPullRequests(first: 1) {
+          nodes {
+            ... on PullRequest {
+              id
               number
+              comments(first: 100) {
+                nodes {
+                  id
+                  url
+                  author {
+                    login
+                  }
+                  body
+                }
+                pageInfo {
+                  hasNextPage
+                }
+              }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+query GetPullRequestForURI($uri: URI!) {
+  resource(url: $uri) {
+    ... on PullRequest {
+      id
+      number
+      comments(first: 100) {
+        nodes {
+          id
+          url
+          author {
+            login
+          }
+          body
+        }
+        pageInfo {
+          hasNextPage
+        }
+      }
+    }
+  }
+}
+
+query GetPullRequestForBranch($owner: String!, $repo: String!, $headref: String, $baseref: String) {
+  repository(owner: $owner, name: $repo) {
+    pullRequests(
+      states: [OPEN, CLOSED, MERGED]
+      first: 1
+      headRefName: $headref
+      baseRefName: $baseref
+    ) {
+      nodes {
+        ... on PullRequest {
+          number
+          id
+          comments(first: 100) {
+            nodes {
+              id
+              url
+              author {
+                login
+              }
+              body
+            }
+            pageInfo {
+              hasNextPage
+            }
+          }
         }
       }
     }
@@ -18,8 +87,8 @@ query GetPullRequestAndCommentsForCommit($owner: String!, $repo: String!, $sha: 
       ... on Commit {
         associatedPullRequests(first: 1) {
           nodes {
-            number
             ... on PullRequest {
+              number
               id
               comments(first: 100) {
                 nodes {
@@ -44,13 +113,16 @@ query GetPullRequestAndCommentsForCommit($owner: String!, $repo: String!, $sha: 
 
 
 # {
-#  "sha": "a871cf3372c1ac1bc49d54cda5945091ba161b65",
-#  "repo": "districts-jobs",
-#  "owner": "Khan"
+#  "headref": "gorun",
+#  "baseref": "main",
+#  "repo": "commentary",
+#  "owner": "StevenACoffman",
+#  "sha": "78ab2494f5f411a8205641ebd084e15ef0a99bf7",
+#  "uri": "https://github.com/StevenACoffman/commentary/pull/1"
 # }
 
-query GetCommentsForPullRequest($url: URI!) {
-  resource(url: $url) {
+query GetCommentsForPullRequest($uri: URI!) {
+  resource(url: $uri) {
     ... on PullRequest {
       comments(first: 100) {
         nodes {

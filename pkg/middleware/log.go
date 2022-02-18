@@ -60,7 +60,7 @@ func (lrt *LoggingRoundTripper) RoundTrip(
 		command, _ := http2curl.GetCurlCommand(req)
 		fmt.Println(command)
 
-		fmt.Println("body:\n", body)
+		fmt.Println("body:\n", body, "\nend body\n ")
 		if graphqlErr != nil {
 			fmt.Printf("graphql errors:%+v\n", graphqlErr)
 		}

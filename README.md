@@ -13,13 +13,19 @@ So writing GitHub actions in Go, I'm aware of 4 possibilities:
 3. [package your Go as a docker container](https://www.sethvargo.com/writing-github-actions-in-go/) (private or public registry)
 4. [attach pre-built Go artifacts to a github release and run those using js wrappers](https://full-stack.blend.com/how-we-write-github-actions-in-go.html)
 
+I have started to add all these to this repository to see how they perform.
+
 ### Running as a GitHub Action
 There are several environment variables that this needs.
 + `COMMENTARY_ACTION_TYPE` -  you can have multiple actions all racing without stepping on each other
 + `GITHUB_TOKEN` - This should be a secret, but is the personal access token of the service account (or your real github account)
 + `GITHUB_REPOSITORY` - Set by GitHub as an `owner/repo`
 + `GITHUB_REPOSITORY_OWNER` - Set by GitHub as `owner` 
++ `GITHUB_BASE_REF` - Set by GitHub as `main`
++ `GITHUB_HEAD_REF` - Set by Github to be the branch name, e.g. `mybranch`
++ `GITHUB_REF_NAME` - Set by Github, for example, `1/merge`
 + `GITHUB_SHA` - Set by GitHub as the commit sha1, and used to look up the PR.
+
 
 ### Mage
 
