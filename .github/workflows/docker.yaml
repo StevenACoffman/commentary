@@ -1,0 +1,26 @@
+name: GoRunCommenter
+on:
+  pull_request:
+    branches:
+    - main
+env:
+  GOPRIVATE: "github.com/Khan"
+  GOFLAGS: "-trimpath"
+  GITHUB_TOKEN: "${{ secrets.PERSONAL_TOKEN }}"
+  COMMENTARY_ACTION_TYPE: "go run main.go"
+jobs:
+  commenter:
+#    runs-on: [self-hosted, linux, x64]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - name: Install Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: "1.17.x"
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Commentary
+      run: |-
+        echo "starting go run main.go"
+        go run main.go
