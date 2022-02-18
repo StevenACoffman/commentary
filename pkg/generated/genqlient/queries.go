@@ -8,7 +8,6 @@ import (
 	"fmt"
 
 	"github.com/Khan/genqlient/graphql"
-
 	"github.com/StevenACoffman/commentary/pkg/types"
 )
 
@@ -274,6 +273,7 @@ func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnect
 }
 
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) UnmarshalJSON(b []byte) error {
+
 	if string(b) == "null" {
 		return nil
 	}
@@ -368,16 +368,12 @@ type GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionN
 
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
-
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
-
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
-
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
-
 func (v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser) implementsGraphQLInterfaceGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
 }
 
@@ -420,6 +416,7 @@ func __unmarshalGetCommentsForPullRequestResourcePullRequestCommentsIssueComment
 }
 
 func __marshalGetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(v *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor) ([]byte, error) {
+
 	var typename string
 	switch v := (*v).(type) {
 	case *GetCommentsForPullRequestResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot:
@@ -714,67 +711,46 @@ type GetCommentsForPullRequestResourceUniformResourceLocatable interface {
 
 func (v *GetCommentsForPullRequestResourceBot) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceCheckRun) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceClosedEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceCommit) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceConvertToDraftEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceCrossReferencedEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceGist) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceIssue) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceMannequin) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceMergedEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceMilestone) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceOrganization) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourcePullRequest) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourcePullRequestCommit) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceReadyForReviewEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceRelease) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceRepository) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceRepositoryTopic) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceReviewDismissedEvent) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceTeamDiscussion) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceTeamDiscussionComment) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
-
 func (v *GetCommentsForPullRequestResourceUser) implementsGraphQLInterfaceGetCommentsForPullRequestResourceUniformResourceLocatable() {
 }
 
@@ -868,6 +844,7 @@ func __unmarshalGetCommentsForPullRequestResourceUniformResourceLocatable(b []by
 }
 
 func __marshalGetCommentsForPullRequestResourceUniformResourceLocatable(v *GetCommentsForPullRequestResourceUniformResourceLocatable) ([]byte, error) {
+
 	var typename string
 	switch v := (*v).(type) {
 	case *GetCommentsForPullRequestResourceBot:
@@ -1077,6 +1054,7 @@ func (v *GetCommentsForPullRequestResponse) GetResource() GetCommentsForPullRequ
 }
 
 func (v *GetCommentsForPullRequestResponse) UnmarshalJSON(b []byte) error {
+
 	if string(b) == "null" {
 		return nil
 	}
@@ -1161,6 +1139,436 @@ func (v *GetPullRequestAndCommentsForCommitResponse) GetRepository() GetPullRequ
 	return v.Repository
 }
 
+// GetPullRequestForBranchRepository includes the requested fields of the GraphQL type Repository.
+// The GraphQL type's documentation follows.
+//
+// A repository contains the content for a project.
+type GetPullRequestForBranchRepository struct {
+	// A list of pull requests that have been opened in the repository.
+	PullRequests GetPullRequestForBranchRepositoryPullRequestsPullRequestConnection `json:"pullRequests"`
+}
+
+// GetPullRequests returns GetPullRequestForBranchRepository.PullRequests, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepository) GetPullRequests() GetPullRequestForBranchRepositoryPullRequestsPullRequestConnection {
+	return v.PullRequests
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnection includes the requested fields of the GraphQL type PullRequestConnection.
+// The GraphQL type's documentation follows.
+//
+// The connection type for PullRequest.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnection struct {
+	// A list of nodes.
+	Nodes []GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest `json:"nodes"`
+}
+
+// GetNodes returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnection.Nodes, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnection) GetNodes() []GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest {
+	return v.Nodes
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest includes the requested fields of the GraphQL type PullRequest.
+// The GraphQL type's documentation follows.
+//
+// A repository pull request.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest struct {
+	// Identifies the pull request number.
+	Number int    `json:"number"`
+	Id     string `json:"id"`
+	// A list of comments associated with the pull request.
+	Comments GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnection `json:"comments"`
+}
+
+// GetNumber returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest.Number, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest) GetNumber() int {
+	return v.Number
+}
+
+// GetId returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest.Id, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest) GetId() string {
+	return v.Id
+}
+
+// GetComments returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest.Comments, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequest) GetComments() GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnection {
+	return v.Comments
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnection includes the requested fields of the GraphQL type IssueCommentConnection.
+// The GraphQL type's documentation follows.
+//
+// The connection type for IssueComment.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnection struct {
+	// A list of nodes.
+	Nodes []GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment `json:"nodes"`
+	// Information to aid in pagination.
+	PageInfo GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionPageInfo `json:"pageInfo"`
+}
+
+// GetNodes returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnection.Nodes, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnection) GetNodes() []GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment {
+	return v.Nodes
+}
+
+// GetPageInfo returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnection.PageInfo, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnection) GetPageInfo() GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionPageInfo {
+	return v.PageInfo
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment includes the requested fields of the GraphQL type IssueComment.
+// The GraphQL type's documentation follows.
+//
+// Represents a comment on an Issue.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment struct {
+	Id string `json:"id"`
+	// The HTTP URL for this issue comment
+	Url string `json:"url"`
+	// The actor who authored the comment.
+	Author GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor `json:"-"`
+	// The body as Markdown.
+	Body string `json:"body"`
+}
+
+// GetId returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment.Id, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment) GetId() string {
+	return v.Id
+}
+
+// GetUrl returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment.Url, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment) GetUrl() string {
+	return v.Url
+}
+
+// GetAuthor returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment.Author, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment) GetAuthor() GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor {
+	return v.Author
+}
+
+// GetBody returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment.Body, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment) GetBody() string {
+	return v.Body
+}
+
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment) UnmarshalJSON(b []byte) error {
+
+	if string(b) == "null" {
+		return nil
+	}
+
+	var firstPass struct {
+		*GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment
+		Author json.RawMessage `json:"author"`
+		graphql.NoUnmarshalJSON
+	}
+	firstPass.GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment = v
+
+	err := json.Unmarshal(b, &firstPass)
+	if err != nil {
+		return err
+	}
+
+	{
+		dst := &v.Author
+		src := firstPass.Author
+		if len(src) != 0 && string(src) != "null" {
+			err = __unmarshalGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(
+				src, dst)
+			if err != nil {
+				return fmt.Errorf(
+					"Unable to unmarshal GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment.Author: %w", err)
+			}
+		}
+	}
+	return nil
+}
+
+type __premarshalGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment struct {
+	Id string `json:"id"`
+
+	Url string `json:"url"`
+
+	Author json.RawMessage `json:"author"`
+
+	Body string `json:"body"`
+}
+
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment) MarshalJSON() ([]byte, error) {
+	premarshaled, err := v.__premarshalJSON()
+	if err != nil {
+		return nil, err
+	}
+	return json.Marshal(premarshaled)
+}
+
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment) __premarshalJSON() (*__premarshalGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment, error) {
+	var retval __premarshalGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment
+
+	retval.Id = v.Id
+	retval.Url = v.Url
+	{
+
+		dst := &retval.Author
+		src := v.Author
+		var err error
+		*dst, err = __marshalGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(
+			&src)
+		if err != nil {
+			return nil, fmt.Errorf(
+				"Unable to marshal GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueComment.Author: %w", err)
+		}
+	}
+	retval.Body = v.Body
+	return &retval, nil
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor includes the requested fields of the GraphQL interface Actor.
+//
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor is implemented by the following types:
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser
+// The GraphQL type's documentation follows.
+//
+// Represents an object which can take actions on GitHub. Typically a User or Bot.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor interface {
+	implementsGraphQLInterfaceGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor()
+	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
+	GetTypename() string
+	// GetLogin returns the interface-field "login" from its implementation.
+	// The GraphQL interface field's documentation follows.
+	//
+	// The username of the actor.
+	GetLogin() string
+}
+
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot) implementsGraphQLInterfaceGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount) implementsGraphQLInterfaceGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin) implementsGraphQLInterfaceGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization) implementsGraphQLInterfaceGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser) implementsGraphQLInterfaceGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+
+func __unmarshalGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(b []byte, v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor) error {
+	if string(b) == "null" {
+		return nil
+	}
+
+	var tn struct {
+		TypeName string `json:"__typename"`
+	}
+	err := json.Unmarshal(b, &tn)
+	if err != nil {
+		return err
+	}
+
+	switch tn.TypeName {
+	case "Bot":
+		*v = new(GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot)
+		return json.Unmarshal(b, *v)
+	case "EnterpriseUserAccount":
+		*v = new(GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount)
+		return json.Unmarshal(b, *v)
+	case "Mannequin":
+		*v = new(GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin)
+		return json.Unmarshal(b, *v)
+	case "Organization":
+		*v = new(GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization)
+		return json.Unmarshal(b, *v)
+	case "User":
+		*v = new(GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser)
+		return json.Unmarshal(b, *v)
+	case "":
+		return fmt.Errorf(
+			"response was missing Actor.__typename")
+	default:
+		return fmt.Errorf(
+			`unexpected concrete type for GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor: "%v"`, tn.TypeName)
+	}
+}
+
+func __marshalGetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor) ([]byte, error) {
+
+	var typename string
+	switch v := (*v).(type) {
+	case *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot:
+		typename = "Bot"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount:
+		typename = "EnterpriseUserAccount"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin:
+		typename = "Mannequin"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization:
+		typename = "Organization"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser:
+		typename = "User"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser
+		}{typename, v}
+		return json.Marshal(result)
+	case nil:
+		return []byte("null"), nil
+	default:
+		return nil, fmt.Errorf(
+			`unexpected concrete type for GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor: "%T"`, v)
+	}
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot includes the requested fields of the GraphQL type Bot.
+// The GraphQL type's documentation follows.
+//
+// A special type of user which takes actions on behalf of GitHub Apps.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount includes the requested fields of the GraphQL type EnterpriseUserAccount.
+// The GraphQL type's documentation follows.
+//
+// An account for a user who is an admin of an enterprise or a member of an enterprise through one or more organizations.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin includes the requested fields of the GraphQL type Mannequin.
+// The GraphQL type's documentation follows.
+//
+// A placeholder user for attribution of imported data on GitHub.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization includes the requested fields of the GraphQL type Organization.
+// The GraphQL type's documentation follows.
+//
+// An account on GitHub, with one or more owners, that has repositories, members and teams.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser includes the requested fields of the GraphQL type User.
+// The GraphQL type's documentation follows.
+//
+// A user is an individual's account on GitHub that owns repositories and can make new content.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionPageInfo includes the requested fields of the GraphQL type PageInfo.
+// The GraphQL type's documentation follows.
+//
+// Information about pagination in a connection.
+type GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionPageInfo struct {
+	// When paginating forwards, are there more items?
+	HasNextPage bool `json:"hasNextPage"`
+}
+
+// GetHasNextPage returns GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionPageInfo.HasNextPage, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchRepositoryPullRequestsPullRequestConnectionNodesPullRequestCommentsIssueCommentConnectionPageInfo) GetHasNextPage() bool {
+	return v.HasNextPage
+}
+
+// GetPullRequestForBranchResponse is returned by GetPullRequestForBranch on success.
+type GetPullRequestForBranchResponse struct {
+	// Lookup a given repository by the owner and repository name.
+	Repository GetPullRequestForBranchRepository `json:"repository"`
+}
+
+// GetRepository returns GetPullRequestForBranchResponse.Repository, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForBranchResponse) GetRepository() GetPullRequestForBranchRepository {
+	return v.Repository
+}
+
 // GetPullRequestForCommitRepository includes the requested fields of the GraphQL type Repository.
 // The GraphQL type's documentation follows.
 //
@@ -1182,6 +1590,1058 @@ type GetPullRequestForCommitResponse struct {
 // GetRepository returns GetPullRequestForCommitResponse.Repository, and is useful for accessing the field via an interface.
 func (v *GetPullRequestForCommitResponse) GetRepository() GetPullRequestForCommitRepository {
 	return v.Repository
+}
+
+// GetPullRequestForURIResourceBot includes the requested fields of the GraphQL type Bot.
+// The GraphQL type's documentation follows.
+//
+// A special type of user which takes actions on behalf of GitHub Apps.
+type GetPullRequestForURIResourceBot struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceBot.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceBot) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceCheckRun includes the requested fields of the GraphQL type CheckRun.
+// The GraphQL type's documentation follows.
+//
+// A check run.
+type GetPullRequestForURIResourceCheckRun struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceCheckRun.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceCheckRun) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceClosedEvent includes the requested fields of the GraphQL type ClosedEvent.
+// The GraphQL type's documentation follows.
+//
+// Represents a 'closed' event on any `Closable`.
+type GetPullRequestForURIResourceClosedEvent struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceClosedEvent.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceClosedEvent) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceCommit includes the requested fields of the GraphQL type Commit.
+// The GraphQL type's documentation follows.
+//
+// Represents a Git commit.
+type GetPullRequestForURIResourceCommit struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceCommit.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceCommit) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceConvertToDraftEvent includes the requested fields of the GraphQL type ConvertToDraftEvent.
+// The GraphQL type's documentation follows.
+//
+// Represents a 'convert_to_draft' event on a given pull request.
+type GetPullRequestForURIResourceConvertToDraftEvent struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceConvertToDraftEvent.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceConvertToDraftEvent) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceCrossReferencedEvent includes the requested fields of the GraphQL type CrossReferencedEvent.
+// The GraphQL type's documentation follows.
+//
+// Represents a mention made by one issue or pull request to another.
+type GetPullRequestForURIResourceCrossReferencedEvent struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceCrossReferencedEvent.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceCrossReferencedEvent) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceGist includes the requested fields of the GraphQL type Gist.
+// The GraphQL type's documentation follows.
+//
+// A Gist.
+type GetPullRequestForURIResourceGist struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceGist.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceGist) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceIssue includes the requested fields of the GraphQL type Issue.
+// The GraphQL type's documentation follows.
+//
+// An Issue is a place to discuss ideas, enhancements, tasks, and bugs for a project.
+type GetPullRequestForURIResourceIssue struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceIssue.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceIssue) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceMannequin includes the requested fields of the GraphQL type Mannequin.
+// The GraphQL type's documentation follows.
+//
+// A placeholder user for attribution of imported data on GitHub.
+type GetPullRequestForURIResourceMannequin struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceMannequin.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceMannequin) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceMergedEvent includes the requested fields of the GraphQL type MergedEvent.
+// The GraphQL type's documentation follows.
+//
+// Represents a 'merged' event on a given pull request.
+type GetPullRequestForURIResourceMergedEvent struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceMergedEvent.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceMergedEvent) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceMilestone includes the requested fields of the GraphQL type Milestone.
+// The GraphQL type's documentation follows.
+//
+// Represents a Milestone object on a given repository.
+type GetPullRequestForURIResourceMilestone struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceMilestone.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceMilestone) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceOrganization includes the requested fields of the GraphQL type Organization.
+// The GraphQL type's documentation follows.
+//
+// An account on GitHub, with one or more owners, that has repositories, members and teams.
+type GetPullRequestForURIResourceOrganization struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceOrganization.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceOrganization) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourcePullRequest includes the requested fields of the GraphQL type PullRequest.
+// The GraphQL type's documentation follows.
+//
+// A repository pull request.
+type GetPullRequestForURIResourcePullRequest struct {
+	Typename string `json:"__typename"`
+	Id       string `json:"id"`
+	// Identifies the pull request number.
+	Number int `json:"number"`
+	// A list of comments associated with the pull request.
+	Comments GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnection `json:"comments"`
+}
+
+// GetTypename returns GetPullRequestForURIResourcePullRequest.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequest) GetTypename() string { return v.Typename }
+
+// GetId returns GetPullRequestForURIResourcePullRequest.Id, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequest) GetId() string { return v.Id }
+
+// GetNumber returns GetPullRequestForURIResourcePullRequest.Number, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequest) GetNumber() int { return v.Number }
+
+// GetComments returns GetPullRequestForURIResourcePullRequest.Comments, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequest) GetComments() GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnection {
+	return v.Comments
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnection includes the requested fields of the GraphQL type IssueCommentConnection.
+// The GraphQL type's documentation follows.
+//
+// The connection type for IssueComment.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnection struct {
+	// A list of nodes.
+	Nodes []GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment `json:"nodes"`
+	// Information to aid in pagination.
+	PageInfo GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionPageInfo `json:"pageInfo"`
+}
+
+// GetNodes returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnection.Nodes, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnection) GetNodes() []GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment {
+	return v.Nodes
+}
+
+// GetPageInfo returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnection.PageInfo, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnection) GetPageInfo() GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionPageInfo {
+	return v.PageInfo
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment includes the requested fields of the GraphQL type IssueComment.
+// The GraphQL type's documentation follows.
+//
+// Represents a comment on an Issue.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment struct {
+	Id string `json:"id"`
+	// The HTTP URL for this issue comment
+	Url string `json:"url"`
+	// The actor who authored the comment.
+	Author GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor `json:"-"`
+	// The body as Markdown.
+	Body string `json:"body"`
+}
+
+// GetId returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment.Id, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) GetId() string {
+	return v.Id
+}
+
+// GetUrl returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment.Url, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) GetUrl() string {
+	return v.Url
+}
+
+// GetAuthor returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment.Author, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) GetAuthor() GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor {
+	return v.Author
+}
+
+// GetBody returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment.Body, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) GetBody() string {
+	return v.Body
+}
+
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) UnmarshalJSON(b []byte) error {
+
+	if string(b) == "null" {
+		return nil
+	}
+
+	var firstPass struct {
+		*GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment
+		Author json.RawMessage `json:"author"`
+		graphql.NoUnmarshalJSON
+	}
+	firstPass.GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment = v
+
+	err := json.Unmarshal(b, &firstPass)
+	if err != nil {
+		return err
+	}
+
+	{
+		dst := &v.Author
+		src := firstPass.Author
+		if len(src) != 0 && string(src) != "null" {
+			err = __unmarshalGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(
+				src, dst)
+			if err != nil {
+				return fmt.Errorf(
+					"Unable to unmarshal GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment.Author: %w", err)
+			}
+		}
+	}
+	return nil
+}
+
+type __premarshalGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment struct {
+	Id string `json:"id"`
+
+	Url string `json:"url"`
+
+	Author json.RawMessage `json:"author"`
+
+	Body string `json:"body"`
+}
+
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) MarshalJSON() ([]byte, error) {
+	premarshaled, err := v.__premarshalJSON()
+	if err != nil {
+		return nil, err
+	}
+	return json.Marshal(premarshaled)
+}
+
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment) __premarshalJSON() (*__premarshalGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment, error) {
+	var retval __premarshalGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment
+
+	retval.Id = v.Id
+	retval.Url = v.Url
+	{
+
+		dst := &retval.Author
+		src := v.Author
+		var err error
+		*dst, err = __marshalGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(
+			&src)
+		if err != nil {
+			return nil, fmt.Errorf(
+				"Unable to marshal GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueComment.Author: %w", err)
+		}
+	}
+	retval.Body = v.Body
+	return &retval, nil
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor includes the requested fields of the GraphQL interface Actor.
+//
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor is implemented by the following types:
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser
+// The GraphQL type's documentation follows.
+//
+// Represents an object which can take actions on GitHub. Typically a User or Bot.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor interface {
+	implementsGraphQLInterfaceGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor()
+	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
+	GetTypename() string
+	// GetLogin returns the interface-field "login" from its implementation.
+	// The GraphQL interface field's documentation follows.
+	//
+	// The username of the actor.
+	GetLogin() string
+}
+
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot) implementsGraphQLInterfaceGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount) implementsGraphQLInterfaceGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin) implementsGraphQLInterfaceGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization) implementsGraphQLInterfaceGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser) implementsGraphQLInterfaceGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor() {
+}
+
+func __unmarshalGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(b []byte, v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor) error {
+	if string(b) == "null" {
+		return nil
+	}
+
+	var tn struct {
+		TypeName string `json:"__typename"`
+	}
+	err := json.Unmarshal(b, &tn)
+	if err != nil {
+		return err
+	}
+
+	switch tn.TypeName {
+	case "Bot":
+		*v = new(GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot)
+		return json.Unmarshal(b, *v)
+	case "EnterpriseUserAccount":
+		*v = new(GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount)
+		return json.Unmarshal(b, *v)
+	case "Mannequin":
+		*v = new(GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin)
+		return json.Unmarshal(b, *v)
+	case "Organization":
+		*v = new(GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization)
+		return json.Unmarshal(b, *v)
+	case "User":
+		*v = new(GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser)
+		return json.Unmarshal(b, *v)
+	case "":
+		return fmt.Errorf(
+			"response was missing Actor.__typename")
+	default:
+		return fmt.Errorf(
+			`unexpected concrete type for GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor: "%v"`, tn.TypeName)
+	}
+}
+
+func __marshalGetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor(v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor) ([]byte, error) {
+
+	var typename string
+	switch v := (*v).(type) {
+	case *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot:
+		typename = "Bot"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount:
+		typename = "EnterpriseUserAccount"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin:
+		typename = "Mannequin"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization:
+		typename = "Organization"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser:
+		typename = "User"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser
+		}{typename, v}
+		return json.Marshal(result)
+	case nil:
+		return []byte("null"), nil
+	default:
+		return nil, fmt.Errorf(
+			`unexpected concrete type for GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorActor: "%T"`, v)
+	}
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot includes the requested fields of the GraphQL type Bot.
+// The GraphQL type's documentation follows.
+//
+// A special type of user which takes actions on behalf of GitHub Apps.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorBot) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount includes the requested fields of the GraphQL type EnterpriseUserAccount.
+// The GraphQL type's documentation follows.
+//
+// An account for a user who is an admin of an enterprise or a member of an enterprise through one or more organizations.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorEnterpriseUserAccount) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin includes the requested fields of the GraphQL type Mannequin.
+// The GraphQL type's documentation follows.
+//
+// A placeholder user for attribution of imported data on GitHub.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorMannequin) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization includes the requested fields of the GraphQL type Organization.
+// The GraphQL type's documentation follows.
+//
+// An account on GitHub, with one or more owners, that has repositories, members and teams.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorOrganization) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser includes the requested fields of the GraphQL type User.
+// The GraphQL type's documentation follows.
+//
+// A user is an individual's account on GitHub that owns repositories and can make new content.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser struct {
+	Typename string `json:"__typename"`
+	// The username of the actor.
+	Login string `json:"login"`
+}
+
+// GetTypename returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser) GetTypename() string {
+	return v.Typename
+}
+
+// GetLogin returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser.Login, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionNodesIssueCommentAuthorUser) GetLogin() string {
+	return v.Login
+}
+
+// GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionPageInfo includes the requested fields of the GraphQL type PageInfo.
+// The GraphQL type's documentation follows.
+//
+// Information about pagination in a connection.
+type GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionPageInfo struct {
+	// When paginating forwards, are there more items?
+	HasNextPage bool `json:"hasNextPage"`
+}
+
+// GetHasNextPage returns GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionPageInfo.HasNextPage, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommentsIssueCommentConnectionPageInfo) GetHasNextPage() bool {
+	return v.HasNextPage
+}
+
+// GetPullRequestForURIResourcePullRequestCommit includes the requested fields of the GraphQL type PullRequestCommit.
+// The GraphQL type's documentation follows.
+//
+// Represents a Git commit part of a pull request.
+type GetPullRequestForURIResourcePullRequestCommit struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourcePullRequestCommit.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourcePullRequestCommit) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceReadyForReviewEvent includes the requested fields of the GraphQL type ReadyForReviewEvent.
+// The GraphQL type's documentation follows.
+//
+// Represents a 'ready_for_review' event on a given pull request.
+type GetPullRequestForURIResourceReadyForReviewEvent struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceReadyForReviewEvent.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceReadyForReviewEvent) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceRelease includes the requested fields of the GraphQL type Release.
+// The GraphQL type's documentation follows.
+//
+// A release contains the content for a release.
+type GetPullRequestForURIResourceRelease struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceRelease.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceRelease) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceRepository includes the requested fields of the GraphQL type Repository.
+// The GraphQL type's documentation follows.
+//
+// A repository contains the content for a project.
+type GetPullRequestForURIResourceRepository struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceRepository.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceRepository) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceRepositoryTopic includes the requested fields of the GraphQL type RepositoryTopic.
+// The GraphQL type's documentation follows.
+//
+// A repository-topic connects a repository to a topic.
+type GetPullRequestForURIResourceRepositoryTopic struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceRepositoryTopic.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceRepositoryTopic) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceReviewDismissedEvent includes the requested fields of the GraphQL type ReviewDismissedEvent.
+// The GraphQL type's documentation follows.
+//
+// Represents a 'review_dismissed' event on a given issue or pull request.
+type GetPullRequestForURIResourceReviewDismissedEvent struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceReviewDismissedEvent.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceReviewDismissedEvent) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceTeamDiscussion includes the requested fields of the GraphQL type TeamDiscussion.
+// The GraphQL type's documentation follows.
+//
+// A team discussion.
+type GetPullRequestForURIResourceTeamDiscussion struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceTeamDiscussion.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceTeamDiscussion) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceTeamDiscussionComment includes the requested fields of the GraphQL type TeamDiscussionComment.
+// The GraphQL type's documentation follows.
+//
+// A comment on a team discussion.
+type GetPullRequestForURIResourceTeamDiscussionComment struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceTeamDiscussionComment.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceTeamDiscussionComment) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResourceUniformResourceLocatable includes the requested fields of the GraphQL interface UniformResourceLocatable.
+//
+// GetPullRequestForURIResourceUniformResourceLocatable is implemented by the following types:
+// GetPullRequestForURIResourceBot
+// GetPullRequestForURIResourceCheckRun
+// GetPullRequestForURIResourceClosedEvent
+// GetPullRequestForURIResourceCommit
+// GetPullRequestForURIResourceConvertToDraftEvent
+// GetPullRequestForURIResourceCrossReferencedEvent
+// GetPullRequestForURIResourceGist
+// GetPullRequestForURIResourceIssue
+// GetPullRequestForURIResourceMannequin
+// GetPullRequestForURIResourceMergedEvent
+// GetPullRequestForURIResourceMilestone
+// GetPullRequestForURIResourceOrganization
+// GetPullRequestForURIResourcePullRequest
+// GetPullRequestForURIResourcePullRequestCommit
+// GetPullRequestForURIResourceReadyForReviewEvent
+// GetPullRequestForURIResourceRelease
+// GetPullRequestForURIResourceRepository
+// GetPullRequestForURIResourceRepositoryTopic
+// GetPullRequestForURIResourceReviewDismissedEvent
+// GetPullRequestForURIResourceTeamDiscussion
+// GetPullRequestForURIResourceTeamDiscussionComment
+// GetPullRequestForURIResourceUser
+// The GraphQL type's documentation follows.
+//
+// Represents a type that can be retrieved by a URL.
+type GetPullRequestForURIResourceUniformResourceLocatable interface {
+	implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable()
+	// GetTypename returns the receiver's concrete GraphQL type-name (see interface doc for possible values).
+	GetTypename() string
+}
+
+func (v *GetPullRequestForURIResourceBot) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceCheckRun) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceClosedEvent) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceCommit) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceConvertToDraftEvent) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceCrossReferencedEvent) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceGist) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceIssue) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceMannequin) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceMergedEvent) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceMilestone) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceOrganization) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourcePullRequest) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourcePullRequestCommit) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceReadyForReviewEvent) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceRelease) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceRepository) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceRepositoryTopic) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceReviewDismissedEvent) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceTeamDiscussion) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceTeamDiscussionComment) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+func (v *GetPullRequestForURIResourceUser) implementsGraphQLInterfaceGetPullRequestForURIResourceUniformResourceLocatable() {
+}
+
+func __unmarshalGetPullRequestForURIResourceUniformResourceLocatable(b []byte, v *GetPullRequestForURIResourceUniformResourceLocatable) error {
+	if string(b) == "null" {
+		return nil
+	}
+
+	var tn struct {
+		TypeName string `json:"__typename"`
+	}
+	err := json.Unmarshal(b, &tn)
+	if err != nil {
+		return err
+	}
+
+	switch tn.TypeName {
+	case "Bot":
+		*v = new(GetPullRequestForURIResourceBot)
+		return json.Unmarshal(b, *v)
+	case "CheckRun":
+		*v = new(GetPullRequestForURIResourceCheckRun)
+		return json.Unmarshal(b, *v)
+	case "ClosedEvent":
+		*v = new(GetPullRequestForURIResourceClosedEvent)
+		return json.Unmarshal(b, *v)
+	case "Commit":
+		*v = new(GetPullRequestForURIResourceCommit)
+		return json.Unmarshal(b, *v)
+	case "ConvertToDraftEvent":
+		*v = new(GetPullRequestForURIResourceConvertToDraftEvent)
+		return json.Unmarshal(b, *v)
+	case "CrossReferencedEvent":
+		*v = new(GetPullRequestForURIResourceCrossReferencedEvent)
+		return json.Unmarshal(b, *v)
+	case "Gist":
+		*v = new(GetPullRequestForURIResourceGist)
+		return json.Unmarshal(b, *v)
+	case "Issue":
+		*v = new(GetPullRequestForURIResourceIssue)
+		return json.Unmarshal(b, *v)
+	case "Mannequin":
+		*v = new(GetPullRequestForURIResourceMannequin)
+		return json.Unmarshal(b, *v)
+	case "MergedEvent":
+		*v = new(GetPullRequestForURIResourceMergedEvent)
+		return json.Unmarshal(b, *v)
+	case "Milestone":
+		*v = new(GetPullRequestForURIResourceMilestone)
+		return json.Unmarshal(b, *v)
+	case "Organization":
+		*v = new(GetPullRequestForURIResourceOrganization)
+		return json.Unmarshal(b, *v)
+	case "PullRequest":
+		*v = new(GetPullRequestForURIResourcePullRequest)
+		return json.Unmarshal(b, *v)
+	case "PullRequestCommit":
+		*v = new(GetPullRequestForURIResourcePullRequestCommit)
+		return json.Unmarshal(b, *v)
+	case "ReadyForReviewEvent":
+		*v = new(GetPullRequestForURIResourceReadyForReviewEvent)
+		return json.Unmarshal(b, *v)
+	case "Release":
+		*v = new(GetPullRequestForURIResourceRelease)
+		return json.Unmarshal(b, *v)
+	case "Repository":
+		*v = new(GetPullRequestForURIResourceRepository)
+		return json.Unmarshal(b, *v)
+	case "RepositoryTopic":
+		*v = new(GetPullRequestForURIResourceRepositoryTopic)
+		return json.Unmarshal(b, *v)
+	case "ReviewDismissedEvent":
+		*v = new(GetPullRequestForURIResourceReviewDismissedEvent)
+		return json.Unmarshal(b, *v)
+	case "TeamDiscussion":
+		*v = new(GetPullRequestForURIResourceTeamDiscussion)
+		return json.Unmarshal(b, *v)
+	case "TeamDiscussionComment":
+		*v = new(GetPullRequestForURIResourceTeamDiscussionComment)
+		return json.Unmarshal(b, *v)
+	case "User":
+		*v = new(GetPullRequestForURIResourceUser)
+		return json.Unmarshal(b, *v)
+	case "":
+		return fmt.Errorf(
+			"response was missing UniformResourceLocatable.__typename")
+	default:
+		return fmt.Errorf(
+			`unexpected concrete type for GetPullRequestForURIResourceUniformResourceLocatable: "%v"`, tn.TypeName)
+	}
+}
+
+func __marshalGetPullRequestForURIResourceUniformResourceLocatable(v *GetPullRequestForURIResourceUniformResourceLocatable) ([]byte, error) {
+
+	var typename string
+	switch v := (*v).(type) {
+	case *GetPullRequestForURIResourceBot:
+		typename = "Bot"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceBot
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceCheckRun:
+		typename = "CheckRun"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceCheckRun
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceClosedEvent:
+		typename = "ClosedEvent"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceClosedEvent
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceCommit:
+		typename = "Commit"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceCommit
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceConvertToDraftEvent:
+		typename = "ConvertToDraftEvent"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceConvertToDraftEvent
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceCrossReferencedEvent:
+		typename = "CrossReferencedEvent"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceCrossReferencedEvent
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceGist:
+		typename = "Gist"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceGist
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceIssue:
+		typename = "Issue"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceIssue
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceMannequin:
+		typename = "Mannequin"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceMannequin
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceMergedEvent:
+		typename = "MergedEvent"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceMergedEvent
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceMilestone:
+		typename = "Milestone"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceMilestone
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceOrganization:
+		typename = "Organization"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceOrganization
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourcePullRequest:
+		typename = "PullRequest"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourcePullRequest
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourcePullRequestCommit:
+		typename = "PullRequestCommit"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourcePullRequestCommit
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceReadyForReviewEvent:
+		typename = "ReadyForReviewEvent"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceReadyForReviewEvent
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceRelease:
+		typename = "Release"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceRelease
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceRepository:
+		typename = "Repository"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceRepository
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceRepositoryTopic:
+		typename = "RepositoryTopic"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceRepositoryTopic
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceReviewDismissedEvent:
+		typename = "ReviewDismissedEvent"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceReviewDismissedEvent
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceTeamDiscussion:
+		typename = "TeamDiscussion"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceTeamDiscussion
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceTeamDiscussionComment:
+		typename = "TeamDiscussionComment"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceTeamDiscussionComment
+		}{typename, v}
+		return json.Marshal(result)
+	case *GetPullRequestForURIResourceUser:
+		typename = "User"
+
+		result := struct {
+			TypeName string `json:"__typename"`
+			*GetPullRequestForURIResourceUser
+		}{typename, v}
+		return json.Marshal(result)
+	case nil:
+		return []byte("null"), nil
+	default:
+		return nil, fmt.Errorf(
+			`unexpected concrete type for GetPullRequestForURIResourceUniformResourceLocatable: "%T"`, v)
+	}
+}
+
+// GetPullRequestForURIResourceUser includes the requested fields of the GraphQL type User.
+// The GraphQL type's documentation follows.
+//
+// A user is an individual's account on GitHub that owns repositories and can make new content.
+type GetPullRequestForURIResourceUser struct {
+	Typename string `json:"__typename"`
+}
+
+// GetTypename returns GetPullRequestForURIResourceUser.Typename, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResourceUser) GetTypename() string { return v.Typename }
+
+// GetPullRequestForURIResponse is returned by GetPullRequestForURI on success.
+type GetPullRequestForURIResponse struct {
+	// Lookup resource by a URL.
+	Resource GetPullRequestForURIResourceUniformResourceLocatable `json:"-"`
+}
+
+// GetResource returns GetPullRequestForURIResponse.Resource, and is useful for accessing the field via an interface.
+func (v *GetPullRequestForURIResponse) GetResource() GetPullRequestForURIResourceUniformResourceLocatable {
+	return v.Resource
+}
+
+func (v *GetPullRequestForURIResponse) UnmarshalJSON(b []byte) error {
+
+	if string(b) == "null" {
+		return nil
+	}
+
+	var firstPass struct {
+		*GetPullRequestForURIResponse
+		Resource json.RawMessage `json:"resource"`
+		graphql.NoUnmarshalJSON
+	}
+	firstPass.GetPullRequestForURIResponse = v
+
+	err := json.Unmarshal(b, &firstPass)
+	if err != nil {
+		return err
+	}
+
+	{
+		dst := &v.Resource
+		src := firstPass.Resource
+		if len(src) != 0 && string(src) != "null" {
+			err = __unmarshalGetPullRequestForURIResourceUniformResourceLocatable(
+				src, dst)
+			if err != nil {
+				return fmt.Errorf(
+					"Unable to unmarshal GetPullRequestForURIResponse.Resource: %w", err)
+			}
+		}
+	}
+	return nil
+}
+
+type __premarshalGetPullRequestForURIResponse struct {
+	Resource json.RawMessage `json:"resource"`
+}
+
+func (v *GetPullRequestForURIResponse) MarshalJSON() ([]byte, error) {
+	premarshaled, err := v.__premarshalJSON()
+	if err != nil {
+		return nil, err
+	}
+	return json.Marshal(premarshaled)
+}
+
+func (v *GetPullRequestForURIResponse) __premarshalJSON() (*__premarshalGetPullRequestForURIResponse, error) {
+	var retval __premarshalGetPullRequestForURIResponse
+
+	{
+
+		dst := &retval.Resource
+		src := v.Resource
+		var err error
+		*dst, err = __marshalGetPullRequestForURIResourceUniformResourceLocatable(
+			&src)
+		if err != nil {
+			return nil, fmt.Errorf(
+				"Unable to marshal GetPullRequestForURIResponse.Resource: %w", err)
+		}
+	}
+	return &retval, nil
 }
 
 // UpdatePullRequestCommentResponse is returned by UpdatePullRequestComment on success.
@@ -1236,11 +2696,11 @@ func (v *__CreateNewPullRequestCommentInput) GetBody() string { return v.Body }
 
 // __GetCommentsForPullRequestInput is used internally by genqlient
 type __GetCommentsForPullRequestInput struct {
-	Url string `json:"url"`
+	Uri string `json:"uri"`
 }
 
-// GetUrl returns __GetCommentsForPullRequestInput.Url, and is useful for accessing the field via an interface.
-func (v *__GetCommentsForPullRequestInput) GetUrl() string { return v.Url }
+// GetUri returns __GetCommentsForPullRequestInput.Uri, and is useful for accessing the field via an interface.
+func (v *__GetCommentsForPullRequestInput) GetUri() string { return v.Uri }
 
 // __GetPullRequestAndCommentsForCommitInput is used internally by genqlient
 type __GetPullRequestAndCommentsForCommitInput struct {
@@ -1258,6 +2718,26 @@ func (v *__GetPullRequestAndCommentsForCommitInput) GetRepo() string { return v.
 // GetSha returns __GetPullRequestAndCommentsForCommitInput.Sha, and is useful for accessing the field via an interface.
 func (v *__GetPullRequestAndCommentsForCommitInput) GetSha() string { return v.Sha }
 
+// __GetPullRequestForBranchInput is used internally by genqlient
+type __GetPullRequestForBranchInput struct {
+	Owner   string `json:"owner"`
+	Repo    string `json:"repo"`
+	Headref string `json:"headref"`
+	Baseref string `json:"baseref"`
+}
+
+// GetOwner returns __GetPullRequestForBranchInput.Owner, and is useful for accessing the field via an interface.
+func (v *__GetPullRequestForBranchInput) GetOwner() string { return v.Owner }
+
+// GetRepo returns __GetPullRequestForBranchInput.Repo, and is useful for accessing the field via an interface.
+func (v *__GetPullRequestForBranchInput) GetRepo() string { return v.Repo }
+
+// GetHeadref returns __GetPullRequestForBranchInput.Headref, and is useful for accessing the field via an interface.
+func (v *__GetPullRequestForBranchInput) GetHeadref() string { return v.Headref }
+
+// GetBaseref returns __GetPullRequestForBranchInput.Baseref, and is useful for accessing the field via an interface.
+func (v *__GetPullRequestForBranchInput) GetBaseref() string { return v.Baseref }
+
 // __GetPullRequestForCommitInput is used internally by genqlient
 type __GetPullRequestForCommitInput struct {
 	Owner string `json:"owner"`
@@ -1273,6 +2753,14 @@ func (v *__GetPullRequestForCommitInput) GetRepo() string { return v.Repo }
 
 // GetSha returns __GetPullRequestForCommitInput.Sha, and is useful for accessing the field via an interface.
 func (v *__GetPullRequestForCommitInput) GetSha() string { return v.Sha }
+
+// __GetPullRequestForURIInput is used internally by genqlient
+type __GetPullRequestForURIInput struct {
+	Uri string `json:"uri"`
+}
+
+// GetUri returns __GetPullRequestForURIInput.Uri, and is useful for accessing the field via an interface.
+func (v *__GetPullRequestForURIInput) GetUri() string { return v.Uri }
 
 // __UpdatePullRequestCommentInput is used internally by genqlient
 type __UpdatePullRequestCommentInput struct {
@@ -1322,10 +2810,10 @@ mutation CreateNewPullRequestComment ($prId: ID!, $body: String!) {
 func GetCommentsForPullRequest(
 	ctx context.Context,
 	client graphql.Client,
-	url string,
+	uri string,
 ) (*GetCommentsForPullRequestResponse, error) {
 	__input := __GetCommentsForPullRequestInput{
-		Url: url,
+		Uri: uri,
 	}
 	var err error
 
@@ -1334,8 +2822,8 @@ func GetCommentsForPullRequest(
 		ctx,
 		"GetCommentsForPullRequest",
 		`
-query GetCommentsForPullRequest ($url: URI!) {
-	resource(url: $url) {
+query GetCommentsForPullRequest ($uri: URI!) {
+	resource(url: $uri) {
 		__typename
 		... on PullRequest {
 			comments(first: 100) {
@@ -1388,8 +2876,8 @@ query GetPullRequestAndCommentsForCommit ($owner: String!, $repo: String!, $sha:
 			... on Commit {
 				associatedPullRequests(first: 1) {
 					nodes {
-						number
 						... on PullRequest {
+							number
 							id
 							comments(first: 100) {
 								nodes {
@@ -1405,6 +2893,60 @@ query GetPullRequestAndCommentsForCommit ($owner: String!, $repo: String!, $sha:
 									hasNextPage
 								}
 							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+`,
+		&retval,
+		&__input,
+	)
+	return &retval, err
+}
+
+func GetPullRequestForBranch(
+	ctx context.Context,
+	client graphql.Client,
+	owner string,
+	repo string,
+	headref string,
+	baseref string,
+) (*GetPullRequestForBranchResponse, error) {
+	__input := __GetPullRequestForBranchInput{
+		Owner:   owner,
+		Repo:    repo,
+		Headref: headref,
+		Baseref: baseref,
+	}
+	var err error
+
+	var retval GetPullRequestForBranchResponse
+	err = client.MakeRequest(
+		ctx,
+		"GetPullRequestForBranch",
+		`
+query GetPullRequestForBranch ($owner: String!, $repo: String!, $headref: String, $baseref: String) {
+	repository(owner: $owner, name: $repo) {
+		pullRequests(states: [OPEN,CLOSED,MERGED], first: 1, headRefName: $headref, baseRefName: $baseref) {
+			nodes {
+				... on PullRequest {
+					number
+					id
+					comments(first: 100) {
+						nodes {
+							id
+							url
+							author {
+								__typename
+								login
+							}
+							body
+						}
+						pageInfo {
+							hasNextPage
 						}
 					}
 				}
@@ -1445,8 +2987,70 @@ query GetPullRequestForCommit ($owner: String!, $repo: String!, $sha: String) {
 			... on Commit {
 				associatedPullRequests(first: 1) {
 					nodes {
-						number
+						... on PullRequest {
+							id
+							number
+							comments(first: 100) {
+								nodes {
+									id
+									url
+									author {
+										__typename
+										login
+									}
+									body
+								}
+								pageInfo {
+									hasNextPage
+								}
+							}
+						}
 					}
+				}
+			}
+		}
+	}
+}
+`,
+		&retval,
+		&__input,
+	)
+	return &retval, err
+}
+
+func GetPullRequestForURI(
+	ctx context.Context,
+	client graphql.Client,
+	uri string,
+) (*GetPullRequestForURIResponse, error) {
+	__input := __GetPullRequestForURIInput{
+		Uri: uri,
+	}
+	var err error
+
+	var retval GetPullRequestForURIResponse
+	err = client.MakeRequest(
+		ctx,
+		"GetPullRequestForURI",
+		`
+query GetPullRequestForURI ($uri: URI!) {
+	resource(url: $uri) {
+		__typename
+		... on PullRequest {
+			id
+			number
+			comments(first: 100) {
+				nodes {
+					id
+					url
+					author {
+						__typename
+						login
+					}
+					body
+				}
+				pageInfo {
+					hasNextPage
 				}
 			}
 		}

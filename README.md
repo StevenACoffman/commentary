@@ -21,6 +21,9 @@ There are several environment variables that this needs.
 + `GITHUB_TOKEN` - This should be a secret, but is the personal access token of the service account (or your real github account)
 + `GITHUB_REPOSITORY` - Set by GitHub as an `owner/repo`
 + `GITHUB_REPOSITORY_OWNER` - Set by GitHub as `owner` 
++ `GITHUB_BASE_REF` - Set by GitHub as `main`
++ `GITHUB_HEAD_REF` - Set by Github to be the branch name, e.g. `mybranch`
++ `GITHUB_REF_NAME` - Set by Github, for example, `1/merge`
 + `GITHUB_SHA` - Set by GitHub as the commit sha1, and used to look up the PR.
 
 
