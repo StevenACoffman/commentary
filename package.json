@@ -1,6 +1,6 @@
 {
   "name": "commentary-cli",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "This is a small demo that will either create a new comment or update an existing comment on a pull request in GitHub.",
   "main": "index.js",
   "scripts": {
