@@ -7,13 +7,19 @@ I got the idea from [Ben Limmer](https://benlimmer.com/2021/12/20/create-or-upda
 
 This seemed like a good way to test how fast the various methods of running github actions would be.
 
-So writing GitHub actions in Go, I'm aware of 4 possibilities:
+So running GitHub actions written in Go, I'm aware of these possibilities:
 1. just shell out and `go run main.go`
-2. [package the Go using npm](https://github.com/sanathkr/go-npm) or [like this](https://blog.xendit.engineer/how-we-repurposed-npm-to-publish-and-distribute-our-go-binaries-for-internal-cli-23981b80911b) (private or public npm registry as you please)
+2. [package the Go using npm](https://github.com/sanathkr/go-npm) and further tweaked [like this](https://blog.xendit.engineer/how-we-repurposed-npm-to-publish-and-distribute-our-go-binaries-for-internal-cli-23981b80911b) (private or public npm registry as you please)
 3. [package your Go as a docker container](https://www.sethvargo.com/writing-github-actions-in-go/) (private or public registry)
 4. [attach pre-built Go artifacts to a github release and run those using js wrappers](https://full-stack.blend.com/how-we-write-github-actions-in-go.html)
 
-I have started to add all these to this repository to see how they perform.
+I have started to add all these to this repository to see how they perform. So far I'm done with the first 3.
+
+| Which Runner | Elapsed      |
+|--------------|--------------|
+| DockerCommenter | 6s |
+| NodeCommenter | 7s |
+| GoRunCommenter | 34s |
 
 ### Running as a GitHub Action
 There are several environment variables that this needs.
@@ -26,6 +32,24 @@ There are several environment variables that this needs.
 + `GITHUB_REF_NAME` - Set by Github, for example, `1/merge`
 + `GITHUB_SHA` - Set by GitHub as the commit sha1, and used to look up the PR.
 
+### Publishing your Go to NPM
+After you (er... me?) cut a new release, you (I?)  need to increment the package.json `version` to match,
+and then run `npm publish`. If you get a 404, you might need to `npm login` again.
+
+This Go-published-to-NPM idea was pioneered by [Sanath Kumar Ramesh](https://github.com/sanathkr/go-npm) and further tweaked [like this](https://blog.xendit.engineer/how-we-repurposed-npm-to-publish-and-distribute-our-go-binaries-for-internal-cli-23981b80911b).
+
+My silly npm package is [commentary-cli](https://www.npmjs.com/package/commentary-cli) has a 39.44 MiB tar ball. 
+
+### Publishing to Docker
+After you cut a new release, you need to push to Docker Hub. There's a handy ko.sh script
+that will do it for you (er... me?) until I Go-ify it into the magefile.
+
+This uses the excellent [`google/ko`](https://github.com/google/ko) to make a fairly small 10 MB image [over here](https://hub.docker.com/repository/docker/stevenacoffman/commentary)
+
+### YOLO Run from release binary
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ### Mage
 
@@ -35,6 +59,14 @@ If you do `brew install mage` then you can run here:
 + `mage -v run` - will run the webserver by doing `go run main.go`
 + `mage generate` - will re-generate the genqlient code by doing `go generate ./...`
 + `mage install` - will build and install the commentary application binary
-+ `mage release` - will generate a new release
++ `mage release <v0.?.0>` - will generate a new release using Go releaser
 
 Or just run the go commands by hand.
+
+### Stuff inside
+I use [genqlient](https://github.com/Khan/genqlient) to communicate with the GitHub GraphQL API.
+I used [Cobra](https://github.com/spf13/cobra) to scaffold out the cli.
+
+### C'mon! Prove those results!
+Ok: 
+<img src="./images/runner_race.png" />
