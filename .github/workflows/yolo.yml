@@ -1,0 +1,27 @@
+name: YoloCommenter
+on:
+  pull_request:
+    branches:
+    - main
+env:
+  GITHUB_TOKEN: "${{ secrets.PERSONAL_TOKEN }}"
+  COMMENTARY_ACTION_TYPE: "yolo"
+jobs:
+  yolo_commenter:
+#    runs-on: [self-hosted, linux, x64]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Commentary
+      run: |-
+        echo "starting yolo"
+        tag="v0.6.0"
+        tag_without_v="$(echo -n "${tag}"| cut -c2-)"
+        asset_url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${tag}/commentary_${tag_without_v}_linux_amd64.tar.gz"
+        echo "Downloading $asset_url"
+        curl -LJ -H "Authorization: bearer ${GITHUB_TOKEN}" \
+        -H 'Accept: application/octet-stream' \
+        "${asset_url}" | tar xvzf - commentary
+        ./commentary

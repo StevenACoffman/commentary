@@ -5,13 +5,15 @@ on a pull request in GitHub.
 
 I got the idea from [Ben Limmer](https://benlimmer.com/2021/12/20/create-or-update-pr-comment/), but I did it in Go.
 
-This seemed like a good way to test how fast the various methods of running github actions would be.
+This seemed like a good way to test how fast the various methods of running github actions authored in Go would be.
+My theory was that npm had an unfair advantage as it was already baked into the standard runner OS, but (SPOILER) I was wrong!
 
 So running GitHub actions written in Go, I'm aware of these possibilities:
 1. just shell out and `go run main.go`
 2. [package the Go using npm](https://github.com/sanathkr/go-npm) and further tweaked [like this](https://blog.xendit.engineer/how-we-repurposed-npm-to-publish-and-distribute-our-go-binaries-for-internal-cli-23981b80911b) (private or public npm registry as you please)
 3. [package your Go as a docker container](https://www.sethvargo.com/writing-github-actions-in-go/) (private or public registry)
-4. [attach pre-built Go artifacts to a github release and run those using js wrappers](https://full-stack.blend.com/how-we-write-github-actions-in-go.html)
+4. YOLO style (download and execute artifact via shell)
+5. [attach pre-built Go artifacts to a github release and run those using js wrappers](https://full-stack.blend.com/how-we-write-github-actions-in-go.html)
 
 I have started to add all these to this repository to see how they perform. So far I'm done with the first 3.
 
@@ -20,6 +22,9 @@ I have started to add all these to this repository to see how they perform. So f
 | DockerCommenter | 6s |
 | NodeCommenter | 7s |
 | GoRunCommenter | 34s |
+
+The overhead of having to setup a Go environment makes `go run main.go` the slowest, but if you need the Go tools anyway,
+maybe it doesn't matter.
 
 ### Running as a GitHub Action
 There are several environment variables that this needs.
@@ -46,11 +51,14 @@ that will do it for you (er... me?) until I Go-ify it into the magefile.
 
 This uses the excellent [`google/ko`](https://github.com/google/ko) to make a fairly small 10 MB image [over here](https://hub.docker.com/repository/docker/stevenacoffman/commentary)
 
-### YOLO Run from release binary
+### YOLO style Run from release binary
+The installation instructions for a lot of things (e.g. homebrew) have you download and execute a shell script, which
+seems wildly insecure, so I refer to it as "YOLO" style installation ("You Only Live Once"). 
+
+There's a script in here `./download-extract-execute-artifact.sh` that does this.
+
 I don't know how to execute it in a one liner, but I imagine there's a trick to do it
-```
-wget -c https://github.com/StevenACoffman/commentary/releases/download/v0.6.0/commentary_0.6.0_linux_amd64.tar.gz | tar -xz
-```
+
 ### Mage
 
 Instead of `make` and `Makefile`, I used [mage](https://magefile.org/) and made a [magefile](https://github.com/StevenACoffman/teamboard/blob/main/magefile.go).
