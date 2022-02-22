@@ -94,6 +94,11 @@ I use [genqlient](https://github.com/Khan/genqlient) to communicate with the Git
 I used [Cobra](https://github.com/spf13/cobra) to scaffold out the cli.
 I use [Mage](https://github.com/magefile/mage) for task automation.
 
-### More GitHub Action reading
+### More GitHub Action in Go reading
 I mean to go back and read more of this:
 + https://github.com/embano1/ci-demo-app/blob/main/DETAILS.md
++ [sethvargo/go-githubactions](https://github.com/sethvargo/go-githubactions) - Go SDK for GitHub Actions
++ [actions-go/toolkit](https://github.com/actions-go/toolkit) - Go SDK for GitHub Actions
++ Run your GitHub Actions locally with [Act](https://github.com/nektos/act)
++ [ChristopherHX/github-act-runner](https://github.com/ChristopherHX/github-act-runner) as self-hosted runner
++ [rhysd/actionlint](https://github.com/rhysd/actionlint)
