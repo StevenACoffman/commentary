@@ -8,14 +8,20 @@ I got the idea from [Ben Limmer](https://benlimmer.com/2021/12/20/create-or-upda
 This seemed like a good way to test how fast the various methods of running GitHub actions authored in Go would be.
 My theory was that npm had an unfair advantage as it was already baked into the standard runner OS, but (SPOILER) I was wrong!
 
-So running GitHub actions written in Go, I'm aware of these possibilities:
-1. just shell out and `go run main.go`
+### GitHub Actions - Many Ways to Go!
+
+Although a GitHub Action Ubuntu Runner comes with scripting languages like Bash, NodeJS, Python, etc.
+it doesn't come with Go 😞. As a result, achieving quick feedback from GitHub Actions _written_ in Go, is all about
+minimizing data transfer size in order to execute your written-in-Go step.
+
+So to execute GitHub Action steps _written_ in Go, I'm aware of these possibilities:
+1. Setup Go in the action, and then just shell out and `go run main.go`
 2. [package the Go using npm](https://github.com/sanathkr/go-npm) and further tweaked [like this](https://blog.xendit.engineer/how-we-repurposed-npm-to-publish-and-distribute-our-go-binaries-for-internal-cli-23981b80911b) (private or public npm registry as you please)
 3. [package your Go as a docker container](https://www.sethvargo.com/writing-github-actions-in-go/) (private or public registry)
-4. attach pre-built Go artifacts to a GitHub release and YOLO style it (download and execute artifact via shell)
-5. [attach pre-built Go artifacts to a GitHub release and run those using js wrappers](https://full-stack.blend.com/how-we-write-github-actions-in-go.html)
+4. attach pre-built Go artifacts to a GitHub release and YOLO it (download and execute artifact via shell)
+5. [attach pre-built Go artifacts to a GitHub release and run those using JS wrappers](https://full-stack.blend.com/how-we-write-github-actions-in-go.html)
 
-I have started to add all these to this repository to see how they perform. So far I'm done with the first 4, but I imagine the Node wrapper would be the
+I have started to add all these methods to this demo repository to see how they perform. So far I'm done with the first 4, but I imagine the Node wrapper would be the
 same as the YOLO Bash one if the node script has no need to install npm dependencies.
 
 | Which Runner    | Elapsed | Download Size |
@@ -76,7 +82,8 @@ Or just run the go commands by hand.
 ### Stuff inside
 I use [genqlient](https://github.com/Khan/genqlient) to communicate with the GitHub GraphQL API.
 I used [Cobra](https://github.com/spf13/cobra) to scaffold out the cli.
+I use Mage for task automation.
 
-### C'mon! Prove those results!
-Ok: 
-<img src="./images/runner_race.png" />
+### GitHub Action details
+
+https://github.com/embano1/ci-demo-app/blob/main/DETAILS.md
