@@ -3,29 +3,30 @@ package http2curl
 import (
 	"bytes"
 	"fmt"
+	"maps"
 	"net/http"
-	"sort"
+	"slices"
 	"strings"
 )
 
-// CurlCommand contains exec.Command compatible slice + helpers
+// CurlCommand contains exec.Command compatible slice + helpers.
 type CurlCommand []string
 
-// append appends a string to the CurlCommand
+// append - appends a string to the CurlCommand.
 func (c *CurlCommand) append(newSlice ...string) {
 	*c = append(*c, newSlice...)
 }
 
-// String returns a ready to copy/paste command
+// String returns a ready to copy/paste command.
 func (c *CurlCommand) String() string {
 	return strings.Join(*c, " ")
 }
 
 func bashEscape(str string) string {
-	return `'` + strings.Replace(str, `'`, `'\''`, -1) + `'`
+	return `'` + strings.ReplaceAll(str, `'`, `'\''`) + `'`
 }
 
-// GetCurlCommand returns a CurlCommand corresponding to an http.Request
+// GetCurlCommand returns a CurlCommand corresponding to an http.Request.
 func GetCurlCommand(req *http.Request) (*CurlCommand, error) {
 	command := CurlCommand{}
 
@@ -43,21 +44,13 @@ func GetCurlCommand(req *http.Request) (*CurlCommand, error) {
 		if err != nil {
 			return nil, fmt.Errorf("getCurlCommand: buffer read from body erorr: %w", err)
 		}
-		if len(buff.String()) > 0 {
+		if buff.String() != "" {
 			bodyEscaped := bashEscape(buff.String())
 			command.append("-d", bodyEscaped)
 		}
 	}
 
-	var keys []string
-
-	for k := range req.Header {
-		keys = append(keys, k)
-	}
-
-	sort.Strings(keys)
-
-	for _, k := range keys {
+	for _, k := range slices.Sorted(maps.Keys(req.Header)) {
 		command.append("-H", appendHeader(req, k))
 	}
 
@@ -67,12 +60,16 @@ func GetCurlCommand(req *http.Request) (*CurlCommand, error) {
 }
 
 var redactedHeaders = []string{
-	"Authorization",
 	"authentication",
+	"authorization",
+	"cookie",
+	"set-cookie",
+	"proxy-authorization",
 	"X-Ka-Service-Admin-Query",
 	"X-Ka-Gateway-Secret",
-	"Cookie",
 	"X-Ka-Fkey",
+	"X-Fastly-Authn",
+	"X-Ka-Fastly-Authn",
 }
 
 func appendHeader(req *http.Request, k string) string {
@@ -86,18 +83,9 @@ func appendHeader(req *http.Request, k string) string {
 // insensitively
 func insensitiveContains(s []string, e string) bool {
 	for _, a := range s {
-		if containsI(a, e) {
+		if strings.EqualFold(a, e) {
 			return true
 		}
 	}
 	return false
-}
-
-// containsI checks if a string contains another,
-// case insensitively
-func containsI(a string, b string) bool {
-	return strings.Contains(
-		strings.ToLower(a),
-		strings.ToLower(b),
-	)
 }

@@ -16,7 +16,7 @@ import (
 	"github.com/spf13/viper"
 
 	"github.com/StevenACoffman/commentary/pkg/github"
-	"github.com/StevenACoffman/commentary/pkg/middleware"
+	"github.com/StevenACoffman/commentary/pkg/tripperware"
 	"github.com/StevenACoffman/commentary/pkg/types"
 )
 
@@ -83,7 +83,7 @@ GITHUB_REPOSITORY_OWNER:%s
 GITHUB_REPOSITORY:%s
 repo:%s
 `, sha, owner, ownerAndRepo, repo)
-		httpClient := middleware.NewBearerAuthHTTPClient(key)
+		httpClient := tripperware.NewBearerAuthHTTPClient(key)
 
 		graphqlClient := graphql.NewClient("https://api.github.com/graphql", httpClient)
 

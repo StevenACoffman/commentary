@@ -2,7 +2,7 @@
 // sometimes called "tripperware" to disambiguate from
 // HTTP server middleware.
 
-package middleware
+package tripperware
 
 import (
 	"encoding/base64"

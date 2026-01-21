@@ -1,4 +1,4 @@
-package middleware
+package tripperware
 
 import (
 	"bytes"
@@ -11,7 +11,7 @@ import (
 
 	"github.com/vektah/gqlparser/v2/gqlerror"
 
-	"github.com/StevenACoffman/commentary/pkg/middleware/http2curl"
+	"github.com/StevenACoffman/commentary/pkg/tripperware/http2curl"
 )
 
 type LoggingRoundTripper struct {
